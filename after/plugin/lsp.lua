@@ -14,7 +14,16 @@ lsp_zero.on_attach(function(client, bufnr)
 end)
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { "tsserver", "html", "intelephense", "clangd", "jedi_language_server", "sqlls" },
+    ensure_installed = {
+        "tsserver",
+        "html",
+        "intelephense",
+        "clangd",
+        "jedi_language_server",
+        "sqlls",
+        --"css-lsp",
+        "docker_compose_language_service",
+        "dockerls" },
     handlers = {
         lsp_zero.default_setup,
     },
