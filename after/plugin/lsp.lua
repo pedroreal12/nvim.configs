@@ -3,6 +3,7 @@ local lsp_zero = require('lsp-zero')
 lsp_zero.on_attach(function(client, bufnr)
     lsp_zero.default_keymaps({ buffer = bufnr })
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+    vim.keymap.set("n", "gr", require('telescope.builtin').lsp_references, {})
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
     vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
     vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
@@ -15,13 +16,14 @@ end)
 require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {
+        "lua_ls",
         "tsserver",
         "html",
         "intelephense",
         "clangd",
         "jedi_language_server",
         "sqlls",
-        --"css-lsp",
+        "cssls",
         "docker_compose_language_service",
         "dockerls" },
     handlers = {

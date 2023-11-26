@@ -26,7 +26,7 @@ vim.keymap.set("n", "<leader>f", vim.lsp.buf.format) -- format file based on the
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
--- wiwndow handling
+-- window handling
 vim.keymap.set("n", "<leader>l", "<C-w><C-l>") -- move to the window on the right
 vim.keymap.set("n", "<leader>j", "<C-w><C-j>") -- move to the window below
 vim.keymap.set("n", "<leader>k", "<C-w><C-k>") -- move to the window above
@@ -60,6 +60,8 @@ vim.keymap.set("n", "<leader>a", "ggVG")       --basically a CTRL + A selects th
 --vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts) suggests a fix
 --vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts) view references
 --vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts) change "this" occurence
+-- vim.keymap.set("n", "gr", require('telescope.builtin').lsp_references, {}) get other references in the project (meant to work with telescope but it isn't working)
+--
 --
 -- telescope
 --
