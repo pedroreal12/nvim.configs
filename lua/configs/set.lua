@@ -25,4 +25,6 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 vim.opt.guicursor = "n-v-c-i:block"
 
+vim.opt.clipboard:append { 'unnamed', 'unnamedplus' } -- allows yanking and putting text outside of vim 
+
 vim.g.mapleader = " "
