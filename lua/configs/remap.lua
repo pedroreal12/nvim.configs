@@ -38,10 +38,12 @@ vim.keymap.set("n", "<leader>a", "ggVG")       --basically a CTRL + A selects th
 
 -- plugins keymap
 -- fugitive
+--
+-- https://cheatography.com/isaacnewton/cheat-sheets/fugitive/ All fugitives keymaps
 -- vim.keymap.set("n", "<leader>gs", vim.cmd.Git) same as git status
 --
 -- harpoon
---vim.keymap.set("n", "<leader>a", mark.add_file)
+--vim.keymap.set("n", "<C-f>a", mark.add_file)
 --vim.keymap.set("n", "<C-p>", ui.toggle_quick_menu)
 --
 --vim.keymap.set("n", "<C-h>", function() ui.nav_file(1) end)
