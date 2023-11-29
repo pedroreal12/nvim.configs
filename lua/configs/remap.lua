@@ -33,6 +33,9 @@ vim.keymap.set("n", "<leader>v", "<C-w><C-v>") -- new window vertically
 vim.keymap.set("n", "<leader>q", "<C-w><C-q>") -- quit window
 vim.keymap.set("n","-", "<C-w>-") -- increase windows height
 vim.keymap.set("n","+", "<C-w>+") -- decrease windows height
+vim.keymap.set("n","<leader>>", "<C-w>>") -- increase windows width
+vim.keymap.set("n","<leader><", "<C-w><") -- decrease windows width
+vim.keymap.set("n","<leader>=", "<C-w>=") -- decrease windows width
 
 vim.keymap.set("n", "<leader>a", "ggVG")       --basically a CTRL + A selects the whole file in visual mode so you can yarn (copy) or delete the whole file
 
