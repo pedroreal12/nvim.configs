@@ -37,7 +37,7 @@ vim.keymap.set("n","<leader>>", "<C-w>>") -- increase windows width
 vim.keymap.set("n","<leader><", "<C-w><") -- decrease windows width
 vim.keymap.set("n","<leader>=", "<C-w>=") -- decrease windows width
 
-vim.keymap.set("n","<leader>r", "<cmd>!dotnet run --project StudentsApp\\StudentsApp\\StudentsApp.csproj<CR>")
+vim.keymap.set("n","<leader>r", ":silent !& Start-Process -WindowStyle Minimized -FilePath \"dotnet\" -ArgumentList \"run --project StudentsApp\\StudentsApp\\StudentsApp.csproj\"<CR>")
 
 vim.keymap.set({"n", "v"}, "<leader>a", "<esc>ggVG")       --basically a CTRL + A selects the whole file in visual mode so you can yarn (copy) or delete the whole file
 
