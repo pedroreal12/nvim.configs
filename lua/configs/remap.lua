@@ -22,12 +22,14 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format) -- format file based on the lsp server
 
+vim.keymap.set("n", "<leader>r", "<cmd>!gcc ./*.c -o main<CR>")
+
 vim.keymap.set("n", "<C-s>", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 if jit.os == "Windows" then
     vim.keymap.set("n","<leader>r", ":silent !& Start-Process -WindowStyle Minimized -FilePath \"dotnet\" -ArgumentList \"run --project StudentsApp\\StudentsApp\\StudentsApp.csproj\"<CR>")
 elseif jit.os == "Linux" then
-    vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x % && ./%<CR>", { silent = true }) -- only usable in linux environments (creates bash executable)
+    vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x % && ./%<CR>", { silent = true })
 end
 
 -- window handling
@@ -43,7 +45,6 @@ vim.keymap.set("n","+", "<C-w>+") -- decrease windows height
 vim.keymap.set("n","<leader>>", "<C-w>>") -- increase windows width
 vim.keymap.set("n","<leader><", "<C-w><") -- decrease windows width
 vim.keymap.set("n","<leader>=", "<C-w>=") -- decrease windows width
-
 
 vim.keymap.set({"n", "v"}, "<leader>a", "<esc>ggVG")       --basically a CTRL + A selects the whole file in visual mode so you can yarn (copy) or delete the whole file
 
