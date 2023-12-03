@@ -7,8 +7,8 @@ Also because I enjoy the idea of only using the keyboard, I'm not very much a mo
 
 ## What plugins are you using?
 I am using some plugins so i can optimize some actions inside neovim just like:
-- Packer as a package manager so I can install/uninstall plugins more easily
-[Packer]([https://github.com/user/repo/blob/branch/other_file.md](https://github.com/wbthomason/packer.nvim))
+
+- [Packer](https://github.com/wbthomason/packer.nvim) Packer as a package manager so I can install/uninstall plugins more easily
 - [Mason](https://github.com/williamboman/mason.nvim), [Mason-lspconfig](https://github.com/williamboman/mason-lspconfig.nvim), [Lsp-zero](https://github.com/VonHeikemen/lsp-zero.nvim), [Lsp-config](https://github.com/neovim/nvim-lspconfig) for Language Server Protocol (LSP) handling
 - [Fugitive](https://github.com/tpope/vim-fugitive) to optimize some Git commands inside my environment
 - [Harpoon](https://github.com/ThePrimeagen/harpoon) so I am able to travel faster inside my projects a lot faster
