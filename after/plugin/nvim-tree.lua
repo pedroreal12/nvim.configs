@@ -6,9 +6,8 @@ local function my_on_attach(bufnr)
     end
 
     -- custom mappings
-    vim.keymap.set("n", "<C-o>", vim.cmd.NvimTreeToggle)
+    vim.keymap.set({ "n", "v" }, "<C-o>", vim.cmd.NvimTreeToggle)
 end
-
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
@@ -35,7 +34,7 @@ require("nvim-tree").setup({
                     staged = "S",
                     unmerged = "UM",
                     renamed = "➜",
-                    untracked = "U",
+                    untracked = "UT",
                     deleted = "D",
                     ignored = "◌",
                 },

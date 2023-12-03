@@ -1,6 +1,9 @@
 local lsp_zero = require('lsp-zero')
 
 lsp_zero.on_attach(function(client, bufnr)
+    vim.diagnostic.config({
+        virtual_text = true
+    })
     local opts = { buffer = bufnr, remap = false }
     lsp_zero.default_keymaps({ buffer = bufnr })
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
@@ -49,9 +52,5 @@ cmp.setup({
         ['<C-Space>'] = cmp.mapping.complete(),
     }),
 })
-
 lsp_zero.setup()
 
-vim.diagnostic.config({
-    virtual_text = true
-})
