@@ -94,3 +94,12 @@ vim.keymap.set({"n", "v"}, "<leader>a", "<esc>ggVG")       --basically a CTRL + 
 --['<Enter>'] = cmp.mapping.confirm({ select = true }), accept autocomplete
 --['<Tab>'] = cmp.mapping.confirm({ select = true }), same as ^^
 --['<C-Space>'] = cmp.mapping.complete(),
+--
+-- nvim-tree
+--
+-- vim.keymap.set("n", "<C-o>", vim.cmd.NvimTreeToggle)
+-- a - creates a file/folder (in nvim-tree context)
+-- d - deletes a file/folder (in nvim-tree context)
+-- e - renames a file/folder (in nvim-tree context)
+-- H - toggles dotfiles
+-- I - Toggles Git ignored files

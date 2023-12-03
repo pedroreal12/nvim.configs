@@ -15,4 +15,5 @@ I am using some plugins so i can optimize some actions inside neovim just like:
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim) to find and search for files inside my projects
 - [Treesitter](https://github.com/tree-sitter/tree-sitter) to highlight and parse code
 - [Undotree](https://github.com/mbbill/undotree) to keep a local history of the files i edit in case I don't add them to git or any other reason
+- [Nvim-Tree](https://github.com/nvim-tree/nvim-tree.lua) to use as a tree viewer
 - [Rose-pine](https://github.com/rose-pine/neovim) by now I am using rose-pine as a theme in neovim
