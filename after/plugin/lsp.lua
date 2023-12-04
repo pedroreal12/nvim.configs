@@ -17,6 +17,7 @@ lsp_zero.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
 end)
+--intelephense.completion.fullyQualifyGlobalConstantsAndFunctions
 require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {
@@ -32,7 +33,14 @@ require('mason-lspconfig').setup({
         "dockerls" },
     handlers = {
         lsp_zero.default_setup,
-    },
+        intelephense = function()
+            require('lspconfig').intelephense.setup({
+                on_attach = function(client, bufnr)
+                    client.completion.fullyQualifyGlobalConstantsAndFunctions = true
+                end
+            })
+        end,
+    }
 })
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
