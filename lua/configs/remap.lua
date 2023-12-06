@@ -20,12 +20,12 @@ vim.keymap.set("x", "<leader>p", "\"_dP")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format) -- format file based on the lsp server
 
-vim.keymap.set("n", "<leader>r", "<cmd>!gcc ./*.c -o main<CR>")
+--vim.keymap.set("n", "<leader>r", "<cmd>!gcc ./*.c -o main<CR>")
 
 vim.keymap.set("n", "<C-s>", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 if jit.os == "Windows" then
-    vim.keymap.set("n","<leader>r", ":silent !& Start-Process -WindowStyle Minimized -FilePath \"dotnet\" -ArgumentList \"run --project StudentsApp\\StudentsApp\\StudentsApp.csproj\"<CR>")
+    vim.keymap.set("n","<leader>r", ":silent !& Start-Process -WindowStyle Minimized -FilePath \"dotnet\" -ArgumentList \"run --project SocialNetworkMovies\\SocialNetworkMovies.csproj\"<CR>")
 elseif jit.os == "Linux" then
     vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x % && ./%<CR>", { silent = true })
 end
