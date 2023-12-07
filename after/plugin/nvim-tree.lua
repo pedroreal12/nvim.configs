@@ -15,6 +15,8 @@ vim.g.loaded_netrwPlugin = 1
 require("nvim-tree").setup({
     view = {
         width = 30,
+        relativenumber = true,
+        number = true
     },
     renderer = {
         group_empty = true,
