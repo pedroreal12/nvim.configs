@@ -19,6 +19,7 @@ vim.keymap.set("n", "<Tab>", ">>")
 vim.keymap.set("n", "<S-Tab>", "<<")
 vim.keymap.set("v", "<Tab>", ">gvzz")
 vim.keymap.set("v", "<S-Tab>", "<gvzz")
+vim.keymap.set("v", "o", "ozz")
 
 vim.keymap.set("x", "<leader>p", "\"_dP")
 
