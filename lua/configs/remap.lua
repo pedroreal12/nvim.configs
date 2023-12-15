@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set({"n", "v"}, "j", "jzz")
 vim.keymap.set({"n", "v"}, "k", "kzz")
@@ -51,6 +50,9 @@ vim.keymap.set("n","<leader><", "<C-w><") -- decrease windows width
 vim.keymap.set("n","<leader>=", "<C-w>=") -- decrease windows width
 
 vim.keymap.set({"n", "v"}, "<leader>a", "<esc>ggVG")       --basically a CTRL + A selects the whole file in visual mode so you can yarn (copy) or delete the whole file
+
+-- Glow remap
+vim.keymap.set("n", "<leader>gg", vim.cmd.Glow)
 
 -- plugins keymap
 -- fugitive
