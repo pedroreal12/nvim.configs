@@ -1,9 +1,6 @@
 local lsp_zero = require('lsp-zero')
 
 lsp_zero.on_attach(function(client, bufnr)
-    vim.diagnostic.config({
-        virtual_text = true
-    })
     local opts = { buffer = bufnr, remap = false }
     lsp_zero.default_keymaps({ buffer = bufnr })
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
@@ -17,7 +14,6 @@ lsp_zero.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
 end)
---intelephense.completion.fullyQualifyGlobalConstantsAndFunctions
 require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {
@@ -27,21 +23,50 @@ require('mason-lspconfig').setup({
         "intelephense",
         "clangd",
         "jedi_language_server",
+        "omnisharp",
         "sqlls",
         "cssls",
         "docker_compose_language_service",
         "dockerls" },
     handlers = {
         lsp_zero.default_setup,
-        intelephense = function()
-            require('lspconfig').intelephense.setup({
-                on_attach = function(client, bufnr)
-                    client.completion.fullyQualifyGlobalConstantsAndFunctions = true
-                end
-            })
-        end,
     }
 })
+
+require("mason-lspconfig").setup_handlers {
+    ["lua_ls"] = function ()
+        local lspconfig = require("lspconfig")
+        lspconfig.lua_ls.setup {
+            settings = {
+                Lua = {
+                    diagnostics = {
+                        globals = { "vim" }
+                    }
+                }
+            }
+        }
+    end,
+    ["omnisharp"] = function ()
+        local lspconfig = require("lspconfig")
+        lspconfig.omnisharp.setup {
+            cmd = {"dotnet", os.getenv("UserProfile") .. "\\AppData\\Local\\nvim-data\\mason\\packages\\omnisharp\\libexec\\OmniSharp.dll"},
+            enable_editorconfig_support = true,
+            enable_ms_build_load_projects_on_demand = false,
+            enable_roslyn_analyzers = true,
+            organize_imports_on_format = false,
+            enable_import_completion = false,
+            sdk_include_prereleases = false,
+            analyze_open_documents_only = true,
+        }
+    end,
+    --[[
+    ["intelephense"] = function ()
+        local lspconfig = require("lspconfig")
+        lspconfig.intelephense.setup {
+        }
+    end
+    ]]
+}
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
@@ -61,4 +86,6 @@ cmp.setup({
     }),
 })
 lsp_zero.setup()
-
+vim.diagnostic.config({
+    virtual_text = true
+})
