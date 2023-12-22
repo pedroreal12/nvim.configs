@@ -30,7 +30,7 @@ vim.keymap.set("n", "<leader>f", vim.lsp.buf.format) -- format file based on the
 vim.keymap.set("n", "<C-s>", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 if jit.os == "Windows" then
-    vim.keymap.set("n","<leader>r", ":silent !& Start-Process -WindowStyle Minimized -FilePath \"dotnet\" -ArgumentList \"run --project SocialNetworkMovies\\SocialNetworkMovies.csproj\"<CR>")
+    vim.keymap.set("n","<leader>r", ":silent !& cd SocialNetworkMovies; Start-Process -WindowStyle Minimized -FilePath \"dotnet\" -ArgumentList \"run --lauchProfile \'IIS Express\' --urls=http://localhost:5003\"<CR>")
 elseif jit.os == "Linux" then
     vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x % && ./%<CR>", { silent = true })
 end
