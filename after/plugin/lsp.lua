@@ -14,6 +14,7 @@ lsp_zero.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
 end)
+
 require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {
@@ -59,14 +60,8 @@ require("mason-lspconfig").setup_handlers {
             analyze_open_documents_only = true,
         }
     end,
-    --[[
-    ["intelephense"] = function ()
-        local lspconfig = require("lspconfig")
-        lspconfig.intelephense.setup {
-        }
-    end
-    ]]
 }
+
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
