@@ -20,6 +20,12 @@ vim.keymap.set("v", "<Tab>", ">gvzz")
 vim.keymap.set("v", "<S-Tab>", "<gvzz")
 vim.keymap.set("v", "o", "ozz")
 
+vim.keymap.set("n", "<A-j>", "gT") -- previous tab
+vim.keymap.set("n", "<A-k>", "gt") -- next tab
+
+vim.keymap.set("n", "<A-w>", ":tabe " .. vim.fn.expand('%') .. "<CR>") -- open new tab with the current file
+vim.keymap.set("n", "<A-q>", ":tabc <CR>") -- close tab
+
 vim.keymap.set("x", "<leader>p", "\"_dP")
 
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
