@@ -25,6 +25,7 @@ require('mason-lspconfig').setup({
         "clangd",
         "jedi_language_server",
         "omnisharp",
+        "rust_analyzer",
         "sqlls",
         "cssls",
         "docker_compose_language_service",
