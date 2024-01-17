@@ -13,7 +13,7 @@ telescope.setup({
 })
 vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
 vim.keymap.set('n', '<C-g>', builtin.git_files, {})
-vim.keymap.set({ "n", "v" }, '<leader>ps', builtin.grep_string, {})
+vim.keymap.set("n", '<leader>ps', builtin.grep_string, {})
 vim.keymap.set("n", "<A-p>", function ()
     builtin.find_files({no_ignore = true})
 end)
