@@ -19,7 +19,7 @@ vim.keymap.set("n", "<S-Tab>", "<<")
 vim.keymap.set("v", "<Tab>", ">gvzz")
 vim.keymap.set("v", "<S-Tab>", "<gvzz")
 vim.keymap.set("v", "o", "ozz")
-
+vim.keymap.set("n", "%", "%zz")
 vim.keymap.set("n", "<A-j>", "gT") -- previous tab
 vim.keymap.set("n", "<A-k>", "gt") -- next tab
 
