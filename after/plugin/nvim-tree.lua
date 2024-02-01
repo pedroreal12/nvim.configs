@@ -7,6 +7,9 @@ local function my_on_attach(bufnr)
 
     -- custom mappings
     vim.keymap.set({ "n", "v" }, "<C-o>", vim.cmd.NvimTreeToggle)
+    -- remap the > and < because nvim-tree has a default remap for these keys
+    vim.keymap.set("n", ">", "<C-w>>")
+    vim.keymap.set("n", "<", "<C-w><")
 end
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
