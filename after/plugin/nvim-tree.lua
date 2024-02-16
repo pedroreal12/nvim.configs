@@ -11,10 +11,7 @@ local function my_on_attach(bufnr)
     vim.keymap.set("n", ">", "<C-w>>")
     vim.keymap.set("n", "<", "<C-w><")
 end
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
 
--- OR setup with some options
 require("nvim-tree").setup({
     view = {
         width = 30,
