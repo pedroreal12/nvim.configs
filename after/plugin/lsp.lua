@@ -21,10 +21,9 @@ require('mason-lspconfig').setup({
         "lua_ls",
         "tsserver",
         "html",
-        "intelephense",
+        "phpactor",
         "clangd",
         "jedi_language_server",
-        "omnisharp",
         "rust_analyzer",
         "sqlls",
         "cssls",
@@ -48,19 +47,6 @@ require("mason-lspconfig").setup_handlers {
             }
         }
     end,
-    ["omnisharp"] = function ()
-        local lspconfig = require("lspconfig")
-        lspconfig.omnisharp.setup {
-            cmd = {"dotnet", os.getenv("UserProfile") .. "\\AppData\\Local\\nvim-data\\mason\\packages\\omnisharp\\libexec\\OmniSharp.dll"},
-            enable_editorconfig_support = true,
-            enable_ms_build_load_projects_on_demand = false,
-            enable_roslyn_analyzers = true,
-            organize_imports_on_format = false,
-            enable_import_completion = false,
-            sdk_include_prereleases = false,
-            analyze_open_documents_only = true,
-        }
-    end,
 }
 
 local cmp = require('cmp')
@@ -77,7 +63,7 @@ cmp.setup({
         ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
         ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
         ['<Tab>'] = cmp.mapping.confirm({ select = true }),
-        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-[>'] = cmp.mapping.complete(),
     }),
 })
 lsp_zero.setup()
