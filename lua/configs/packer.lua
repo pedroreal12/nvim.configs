@@ -30,4 +30,5 @@ return require('packer').startup(function(use)
     use("nvim-tree/nvim-tree.lua")
     use("m4xshen/autoclose.nvim")
     use {"ellisonleao/glow.nvim", config = function() require("glow").setup() end}
+    use {"LunarVim/bigfile.nvim"}
 end)
